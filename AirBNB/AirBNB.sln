@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29521.150
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AirBNB", "AirBNB\AirBNB.csproj", "{53F7D372-54EA-4FBF-A629-932C5EE28D07}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServer", "IdentityServer\IdentityServer.csproj", "{C6947750-65A2-49CE-AD03-B51A45503641}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{53F7D372-54EA-4FBF-A629-932C5EE28D07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53F7D372-54EA-4FBF-A629-932C5EE28D07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53F7D372-54EA-4FBF-A629-932C5EE28D07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53F7D372-54EA-4FBF-A629-932C5EE28D07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6947750-65A2-49CE-AD03-B51A45503641}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6947750-65A2-49CE-AD03-B51A45503641}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6947750-65A2-49CE-AD03-B51A45503641}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6947750-65A2-49CE-AD03-B51A45503641}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {084BE2F6-0F37-497F-8F54-C2321DA710D9}
+	EndGlobalSection
+EndGlobal
