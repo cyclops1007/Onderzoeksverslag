@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Verhaegh\\source\\repos\\AirBNB\\AirBNB\\AirBNB.csproj": {}
+    "C:\\Users\\kay\\Documents\\Github\\Onderzoeksverslag\\AirBNB\\AirBNB\\AirBNB.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Verhaegh\\source\\repos\\AirBNB\\AirBNB\\AirBNB.csproj": {
+    "C:\\Users\\kay\\Documents\\Github\\Onderzoeksverslag\\AirBNB\\AirBNB\\AirBNB.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Verhaegh\\source\\repos\\AirBNB\\AirBNB\\AirBNB.csproj",
+        "projectUniqueName": "C:\\Users\\kay\\Documents\\Github\\Onderzoeksverslag\\AirBNB\\AirBNB\\AirBNB.csproj",
         "projectName": "AirBNB",
-        "projectPath": "C:\\Users\\Verhaegh\\source\\repos\\AirBNB\\AirBNB\\AirBNB.csproj",
-        "packagesPath": "C:\\Users\\Verhaegh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Verhaegh\\source\\repos\\AirBNB\\AirBNB\\obj\\",
+        "projectPath": "C:\\Users\\kay\\Documents\\Github\\Onderzoeksverslag\\AirBNB\\AirBNB\\AirBNB.csproj",
+        "packagesPath": "C:\\Users\\kay\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kay\\Documents\\Github\\Onderzoeksverslag\\AirBNB\\AirBNB\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Verhaegh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\kay\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -64,10 +64,6 @@
               "version": "[3.1.0, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[3.1.0, )"
-            },
-            "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
               "version": "[3.1.0, )"
             },

@@ -44,7 +44,7 @@ namespace IdentityServer
             });
 
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlite(Configuration.GetConnectionString("AirBNB")));
+                options.UseSqlServer(Configuration.GetConnectionString("AirBNB")));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()

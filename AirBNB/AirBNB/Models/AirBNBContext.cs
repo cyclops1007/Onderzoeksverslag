@@ -6,10 +6,6 @@ namespace AirBNB.Models
 {
     public partial class AirBNBContext : DbContext
     {
-        public AirBNBContext()
-        {
-        }
-
         public AirBNBContext(DbContextOptions<AirBNBContext> options)
             : base(options)
         {

@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Verhaegh\\source\\repos\\AirBNB\\IdentityServer\\IdentityServer.csproj": {}
+    "C:\\Users\\kay\\Documents\\Github\\Onderzoeksverslag\\AirBNB\\IdentityServer\\IdentityServer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Verhaegh\\source\\repos\\AirBNB\\IdentityServer\\IdentityServer.csproj": {
+    "C:\\Users\\kay\\Documents\\Github\\Onderzoeksverslag\\AirBNB\\IdentityServer\\IdentityServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Verhaegh\\source\\repos\\AirBNB\\IdentityServer\\IdentityServer.csproj",
+        "projectUniqueName": "C:\\Users\\kay\\Documents\\Github\\Onderzoeksverslag\\AirBNB\\IdentityServer\\IdentityServer.csproj",
         "projectName": "IdentityServer",
-        "projectPath": "C:\\Users\\Verhaegh\\source\\repos\\AirBNB\\IdentityServer\\IdentityServer.csproj",
-        "packagesPath": "C:\\Users\\Verhaegh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Verhaegh\\source\\repos\\AirBNB\\IdentityServer\\obj\\",
+        "projectPath": "C:\\Users\\kay\\Documents\\Github\\Onderzoeksverslag\\AirBNB\\IdentityServer\\IdentityServer.csproj",
+        "packagesPath": "C:\\Users\\kay\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kay\\Documents\\Github\\Onderzoeksverslag\\AirBNB\\IdentityServer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Verhaegh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\kay\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -63,7 +63,7 @@
               "target": "Package",
               "version": "[3.1.0, )"
             },
-            "Microsoft.EntityFrameworkCore.Sqlite": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[3.1.0, )"
             },
