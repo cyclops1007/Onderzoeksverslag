@@ -6,22 +6,24 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AirBNB.Models;
+using AirBNB.DAL;
 
 namespace AirBNB.Controllers
 {
     public class ListingsController : Controller
     {
-        private readonly AirBNBContext _context;
+        //private readonly AirBNBContext _context;
+        private UnitOfWork unitOfWork;
 
         public ListingsController(AirBNBContext context)
         {
-            _context = context;
+            unitOfWork = new UnitOfWork(context);
         }
 
         // GET: Listings
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Listings.ToListAsync());
+            return View(unitOfWork.Listings.GetAll());
         }
 
         // GET: Listings/Details/5
@@ -32,8 +34,8 @@ namespace AirBNB.Controllers
                 return NotFound();
             }
 
-            var listings = await _context.Listings
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var listings = unitOfWork.Listings.Get((int)id);
+
             if (listings == null)
             {
                 return NotFound();
@@ -57,8 +59,8 @@ namespace AirBNB.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(listings);
-                await _context.SaveChangesAsync();
+                unitOfWork.Listings.Add(listings);
+                unitOfWork.Complete();
                 return RedirectToAction(nameof(Index));
             }
             return View(listings);
@@ -72,7 +74,7 @@ namespace AirBNB.Controllers
                 return NotFound();
             }
 
-            var listings = await _context.Listings.FindAsync(id);
+            var listings = unitOfWork.Listings.Get((int)id);
             if (listings == null)
             {
                 return NotFound();
@@ -96,8 +98,11 @@ namespace AirBNB.Controllers
             {
                 try
                 {
-                    _context.Update(listings);
-                    await _context.SaveChangesAsync();
+                    var found = unitOfWork.Listings.Get(id);
+                    found.Name = listings.Name;
+                    found.Summary = listings.Summary;
+
+                    unitOfWork.Complete();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -123,8 +128,7 @@ namespace AirBNB.Controllers
                 return NotFound();
             }
 
-            var listings = await _context.Listings
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var listings = unitOfWork.Listings.Get((int)id);
             if (listings == null)
             {
                 return NotFound();
@@ -138,15 +142,15 @@ namespace AirBNB.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var listings = await _context.Listings.FindAsync(id);
-            _context.Listings.Remove(listings);
-            await _context.SaveChangesAsync();
+            var listings = unitOfWork.Listings.Get(id);
+            unitOfWork.Listings.Remove(listings);
+            unitOfWork.Complete();
             return RedirectToAction(nameof(Index));
         }
 
         private bool ListingsExists(int id)
         {
-            return _context.Listings.Any(e => e.Id == id);
+            return unitOfWork.Listings.Get(id) != null;
         }
     }
 }

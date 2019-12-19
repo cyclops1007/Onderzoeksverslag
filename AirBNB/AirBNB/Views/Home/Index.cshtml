@@ -1,8 +1,31 @@
 ﻿@using Microsoft.AspNetCore.Authentication
+@model IEnumerable<AirBNB.Models.Listings>
 
-<h2>Claims</h2>
+<!--<h2>Claims</h2>-->
+    <head>
+        <script src='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js'></script>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css' rel='stylesheet' />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <style>
+            .marker {
+                background-image: url('mapbox-icon.png');
+                background-size: cover;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                cursor: pointer;
+            }
 
-<dl>
+            .mapboxgl-marker {
+                width: 25px;
+                height: 25px;
+                border-radius: 50%;
+                border: 1px solid gray;
+                background-color: lightblue;
+            }
+        </style>
+    </head>
+@*<dl>
     @foreach (var claim in User.Claims)
     {
         <dt>@claim.Type</dt>
@@ -18,4 +41,37 @@
         <dt>@prop.Key</dt>
         <dd>@prop.Value</dd>
     }
-</dl>
+</dl>*@
+
+<body>
+    <div id='map' style='margin-left: 10px; width: 75vw; height: 85vh;'></div>
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoiY3ljbG9wczEwMDciLCJhIjoiY2szcmFzMGthMDlubDNvcGlkdWZ2YnJ0ayJ9.I6XDbb2CTo0IXIsU9VTBow';
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v11',
+            center: [4.897070, 52.377956],
+            zoom: 10
+        });
+
+        map.on('load', () => {
+            map.addSource("Listings",
+                {
+                    type: "geojson",
+                    data: JSON.parse('@Html.Raw(Json.Serialize(Model))')
+                });
+
+            map.addLayer({
+                id: 'Listings',
+                type: 'circle',
+                source: 'Listings',
+                paint: {
+                    'circle-color': '#1EF008',
+                    'circle-radius': 6,
+                    'circle-stroke-width': 1,
+                    'circle-stroke-color': '#fff'
+                }
+            });
+        });
+    </script>
+</body>

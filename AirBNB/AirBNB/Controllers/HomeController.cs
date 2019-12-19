@@ -6,21 +6,24 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using AirBNB.Models;
+using AirBNB.DAL;
 
 namespace AirBNB.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private UnitOfWork unitOfWork;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, AirBNBContext context)
         {
             _logger = logger;
+            unitOfWork = new UnitOfWork(context);
         }
 
         public IActionResult Index()
         {
-            return View();
+            return View(unitOfWork.Listings.GetAll());
         }
 
         public IActionResult Logout()
