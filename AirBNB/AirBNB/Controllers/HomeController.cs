@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using AirBNB.Models;
 using AirBNB.DAL;
+using GeoJSON.Net.Feature;
+using GeoJSON.Net.Geometry;
+using Newtonsoft.Json;
 
 namespace AirBNB.Controllers
 {
@@ -23,8 +26,19 @@ namespace AirBNB.Controllers
 
         public IActionResult Index()
         {
-            return View(unitOfWork.Listings.GetAll());
+            FeatureCollection featureCollection = new FeatureCollection();
+
+            foreach (var listings in unitOfWork.Listings.GetAll()) {
+                featureCollection.Features.Add(
+                    new Feature(
+                        new Point(
+                             new Position((string)listings.Latitude.GetValueOrDefault(0).ToString().Replace(',', '.'), (string)listings.Longitude.GetValueOrDefault(0).ToString().Replace(',', '.')))));
+                           // new Position((double)listings.Latitude, (double)listings.Longitude))));
+            }
+
+            return View(new JsonResult(JsonConvert.SerializeObject(featureCollection)));
         }
+
 
         public IActionResult Logout()
         {

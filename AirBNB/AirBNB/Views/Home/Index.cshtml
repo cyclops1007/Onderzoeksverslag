@@ -1,5 +1,5 @@
 ﻿@using Microsoft.AspNetCore.Authentication
-@model IEnumerable<AirBNB.Models.Listings>
+@model JsonResult
 
 <!--<h2>Claims</h2>-->
     <head>
@@ -43,35 +43,103 @@
     }
 </dl>*@
 
-<body>
-    <div id='map' style='margin-left: 10px; width: 75vw; height: 85vh;'></div>
-    <script>
-        mapboxgl.accessToken = 'pk.eyJ1IjoiY3ljbG9wczEwMDciLCJhIjoiY2szcmFzMGthMDlubDNvcGlkdWZ2YnJ0ayJ9.I6XDbb2CTo0IXIsU9VTBow';
-        var map = new mapboxgl.Map({
-            container: 'map',
-            style: 'mapbox://styles/mapbox/streets-v11',
-            center: [4.897070, 52.377956],
-            zoom: 10
-        });
+<div id='map' style='margin-left: 10px; width: 75vw; height: 85vh;'></div>
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiY3ljbG9wczEwMDciLCJhIjoiY2szcmFzMGthMDlubDNvcGlkdWZ2YnJ0ayJ9.I6XDbb2CTo0IXIsU9VTBow';
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [4.897070, 52.377956],
+        zoom: 10
+    });
 
-        map.on('load', () => {
-            map.addSource("Listings",
-                {
-                    type: "geojson",
-                    data: JSON.parse('@Html.Raw(Json.Serialize(Model))')
-                });
-
-            map.addLayer({
-                id: 'Listings',
-                type: 'circle',
-                source: 'Listings',
-                paint: {
-                    'circle-color': '#1EF008',
-                    'circle-radius': 6,
-                    'circle-stroke-width': 1,
-                    'circle-stroke-color': '#fff'
-                }
+    map.on('load', () => {
+        map.addSource("Listings",
+            {
+                type: "geojson",
+                data: eval('@Html.Raw(Model.Value)'))
             });
+
+        map.addLayer({
+            id: 'clusters',
+            type: 'circle',
+            source: 'Listings',
+            filter: ['has', 'point_count'],
+            paint: {
+                // Use step expressions (https://docs.mapbox.com/mapbox-gl-js/style-spec/#expressions-step)
+                // with three steps to implement three types of circles:
+                //   * Blue, 20px circles when point count is less than 100
+                //   * Yellow, 30px circles when point count is between 100 and 750
+                //   * Pink, 40px circles when point count is greater than or equal to 750
+                'circle-color': [
+                    'step',
+                    ['get', 'point_count'],
+                    '#51bbd6',
+                    100,
+                    '#f1f075',
+                    750,
+                    '#f28cb1'
+                ],
+                'circle-radius': [
+                    'step',
+                    ['get', 'point_count'],
+                    20,
+                    100,
+                    30,
+                    750,
+                    40
+                ]
+            }
         });
-    </script>
-</body>
+        map.addLayer({
+            id: 'cluster-count',
+            type: 'symbol',
+            source: 'Listings',
+            filter: ['has', 'point_count'],
+            layout: {
+                'text-field': '{point_count_abbreviated}',
+                'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
+                'text-size': 12
+            }
+        });
+
+        map.addLayer({
+            id: 'unclustered-point',
+            type: 'circle',
+            source: 'Listings',
+            filter: ['!', ['has', 'point_count']],
+            paint: {
+                'circle-color': '#11b4da',
+                'circle-radius': 4,
+                'circle-stroke-width': 1,
+                'circle-stroke-color': '#fff'
+            }
+        });
+
+        // inspect a cluster on click
+        map.on('click', 'clusters', function (e) {
+            var features = map.queryRenderedFeatures(e.point, {
+                layers: ['clusters']
+            });
+            var clusterId = features[0].properties.cluster_id;
+            map.getSource('Listings').getClusterExpansionZoom(
+                clusterId,
+                function (err, zoom) {
+                    if (err) return;
+
+                    map.easeTo({
+                        center: features[0].geometry.coordinates,
+                        zoom: zoom
+                    });
+                }
+            );
+        });
+
+        map.on('mouseenter', 'clusters', function () {
+            map.getCanvas().style.cursor = 'pointer';
+        });
+        map.on('mouseleave', 'clusters', function () {
+            map.getCanvas().style.cursor = '';
+        });
+    });
+</script>

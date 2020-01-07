@@ -25,7 +25,7 @@
       "IdentityServer/1.0.0": {
         "dependencies": {
           "GeoJSON.Net": "1.2.14",
-          "IdentityServer4.AspNetIdentity": "3.0.2",
+          "IdentityServer4.AspNetIdentity": "3.1.0",
           "Microsoft.AspNetCore.Authentication.Google": "3.1.0",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "3.1.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.0",
@@ -341,60 +341,60 @@
           "lib/netstandard1.1/GeoJSON.Net.dll": {}
         }
       },
-      "IdentityModel/4.0.0": {
+      "IdentityModel/4.1.1": {
         "dependencies": {
           "Newtonsoft.Json": "12.0.2",
-          "System.Text.Encodings.Web": "4.5.0"
+          "System.Text.Encodings.Web": "4.6.0"
         },
         "runtime": {
           "lib/netstandard2.0/IdentityModel.dll": {
-            "assemblyVersion": "4.0.0.0",
-            "fileVersion": "4.0.0.0"
+            "assemblyVersion": "4.1.1.0",
+            "fileVersion": "4.1.1.0"
           }
         },
         "compile": {
           "lib/netstandard2.0/IdentityModel.dll": {}
         }
       },
-      "IdentityServer4/3.0.2": {
+      "IdentityServer4/3.1.0": {
         "dependencies": {
-          "IdentityModel": "4.0.0",
-          "IdentityServer4.Storage": "3.0.2",
-          "Microsoft.AspNetCore.Authentication.OpenIdConnect": "3.0.0",
+          "IdentityModel": "4.1.1",
+          "IdentityServer4.Storage": "3.1.0",
+          "Microsoft.AspNetCore.Authentication.OpenIdConnect": "3.1.0",
           "Newtonsoft.Json": "12.0.2"
         },
         "runtime": {
-          "lib/netcoreapp3.0/IdentityServer4.dll": {
-            "assemblyVersion": "3.0.2.0",
-            "fileVersion": "3.0.2.0"
+          "lib/netcoreapp3.1/IdentityServer4.dll": {
+            "assemblyVersion": "3.1.0.0",
+            "fileVersion": "3.1.0.0"
           }
         },
         "compile": {
-          "lib/netcoreapp3.0/IdentityServer4.dll": {}
+          "lib/netcoreapp3.1/IdentityServer4.dll": {}
         }
       },
-      "IdentityServer4.AspNetIdentity/3.0.2": {
+      "IdentityServer4.AspNetIdentity/3.1.0": {
         "dependencies": {
-          "IdentityServer4": "3.0.2"
+          "IdentityServer4": "3.1.0"
         },
         "runtime": {
-          "lib/netcoreapp3.0/IdentityServer4.AspNetIdentity.dll": {
-            "assemblyVersion": "3.0.2.0",
-            "fileVersion": "3.0.2.0"
+          "lib/netcoreapp3.1/IdentityServer4.AspNetIdentity.dll": {
+            "assemblyVersion": "3.1.0.0",
+            "fileVersion": "3.1.0.0"
           }
         },
         "compile": {
-          "lib/netcoreapp3.0/IdentityServer4.AspNetIdentity.dll": {}
+          "lib/netcoreapp3.1/IdentityServer4.AspNetIdentity.dll": {}
         }
       },
-      "IdentityServer4.Storage/3.0.2": {
+      "IdentityServer4.Storage/3.1.0": {
         "dependencies": {
-          "IdentityModel": "4.0.0"
+          "IdentityModel": "4.1.1"
         },
         "runtime": {
           "lib/netstandard2.0/IdentityServer4.Storage.dll": {
-            "assemblyVersion": "3.0.2.0",
-            "fileVersion": "3.0.2.0"
+            "assemblyVersion": "3.1.0.0",
+            "fileVersion": "3.1.0.0"
           }
         },
         "compile": {
@@ -412,18 +412,18 @@
           "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.Google.dll": {}
         }
       },
-      "Microsoft.AspNetCore.Authentication.OpenIdConnect/3.0.0": {
+      "Microsoft.AspNetCore.Authentication.OpenIdConnect/3.1.0": {
         "dependencies": {
           "Microsoft.IdentityModel.Protocols.OpenIdConnect": "5.5.0"
         },
         "runtime": {
-          "lib/netcoreapp3.0/Microsoft.AspNetCore.Authentication.OpenIdConnect.dll": {
-            "assemblyVersion": "3.0.0.0",
-            "fileVersion": "3.0.19.46502"
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.OpenIdConnect.dll": {
+            "assemblyVersion": "3.1.0.0",
+            "fileVersion": "3.100.19.56601"
           }
         },
         "compile": {
-          "lib/netcoreapp3.0/Microsoft.AspNetCore.Authentication.OpenIdConnect.dll": {}
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.OpenIdConnect.dll": {}
         }
       },
       "Microsoft.AspNetCore.Cryptography.Internal/3.1.0": {},
@@ -466,7 +466,7 @@
       "Microsoft.AspNetCore.Http.Abstractions/2.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Http.Features": "2.0.0",
-          "System.Text.Encodings.Web": "4.5.0"
+          "System.Text.Encodings.Web": "4.6.0"
         }
       },
       "Microsoft.AspNetCore.Http.Features/2.0.0": {
@@ -1905,7 +1905,7 @@
           "System.Text.Encoding": "4.3.0"
         }
       },
-      "System.Text.Encodings.Web/4.5.0": {},
+      "System.Text.Encodings.Web/4.6.0": {},
       "System.Text.RegularExpressions/4.3.0": {
         "dependencies": {
           "System.Runtime": "4.3.0"
@@ -3715,33 +3715,33 @@
       "path": "geojson.net/1.2.14",
       "hashPath": "geojson.net.1.2.14.nupkg.sha512"
     },
-    "IdentityModel/4.0.0": {
+    "IdentityModel/4.1.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Y7i2fezKKKnmxdENfEOpby4Es84e76D16SYcxWKggYraFOvvfKfQAn5KGuuR1X2h1aTrlKZy0lct0NxHg4aVVw==",
-      "path": "identitymodel/4.0.0",
-      "hashPath": "identitymodel.4.0.0.nupkg.sha512"
+      "sha512": "sha512-l9YnaY3tkKbI3VHdU9Rhsk1RPTv6hvA5An6xE1DEYCMKrv+fQC0Z6mo+b/xyegpD6UJYbNhdkv5GF5tAMvPBNw==",
+      "path": "identitymodel/4.1.1",
+      "hashPath": "identitymodel.4.1.1.nupkg.sha512"
     },
-    "IdentityServer4/3.0.2": {
+    "IdentityServer4/3.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-HiRI6tY0NAulqfAO3Z5ND7aq83Cop9Wbk2BM24hBMtY+gadU9i7hO51FowyIM7sBM+HxgxmTZRRnHi59KB2Qsw==",
-      "path": "identityserver4/3.0.2",
-      "hashPath": "identityserver4.3.0.2.nupkg.sha512"
+      "sha512": "sha512-qzb6BPZZD5ytGE9hg430a7jw06zPP8Mk797ENU3wnp9tSGNwNHcszs4SKUlK4Gh/fDND6Zv3GiLZEZ8DqSdzBA==",
+      "path": "identityserver4/3.1.0",
+      "hashPath": "identityserver4.3.1.0.nupkg.sha512"
     },
-    "IdentityServer4.AspNetIdentity/3.0.2": {
+    "IdentityServer4.AspNetIdentity/3.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-yWGMLYX2ZvZmQnxICY13Vigjeveou3SAeKLAZIKkofreJYkELcM47qzBlJTD66p2pY/vlxhjiW8H28jyKN5diw==",
-      "path": "identityserver4.aspnetidentity/3.0.2",
-      "hashPath": "identityserver4.aspnetidentity.3.0.2.nupkg.sha512"
+      "sha512": "sha512-q/HoV3bROngrqwImbhNUSUj95XomiM73xxnKFY/Au6QDxQHLRB1MdoVeOd2XBpD8ePwUOe098QdTfe9C47h5kw==",
+      "path": "identityserver4.aspnetidentity/3.1.0",
+      "hashPath": "identityserver4.aspnetidentity.3.1.0.nupkg.sha512"
     },
-    "IdentityServer4.Storage/3.0.2": {
+    "IdentityServer4.Storage/3.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-q+EH7pTHLJ+vDd4Hsk+MuWp/JDI59tWHOyhL+raFt+8kAQ+Yiv1LSV7RH7a17gz9xr4Kzzuanm8FoZ6S8PFB9A==",
-      "path": "identityserver4.storage/3.0.2",
-      "hashPath": "identityserver4.storage.3.0.2.nupkg.sha512"
+      "sha512": "sha512-iOzIuGa4SEYihJbksLT7gh/hqfV9zxoSJpwJID5zjWxVIqkzdY6n6Kf88I9bZVwW6RU5XRipD/BfVeMqxh/4cw==",
+      "path": "identityserver4.storage/3.1.0",
+      "hashPath": "identityserver4.storage.3.1.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authentication.Google/3.1.0": {
       "type": "package",
@@ -3750,12 +3750,12 @@
       "path": "microsoft.aspnetcore.authentication.google/3.1.0",
       "hashPath": "microsoft.aspnetcore.authentication.google.3.1.0.nupkg.sha512"
     },
-    "Microsoft.AspNetCore.Authentication.OpenIdConnect/3.0.0": {
+    "Microsoft.AspNetCore.Authentication.OpenIdConnect/3.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-z/VvjURz5vS9SLVIHSKzPRe6PH5DPQxuzu+5Cv+2zojg7sVmXmj+sldBoGlGLvf7AA/F53+pc4oE7S8Fa9kfOQ==",
-      "path": "microsoft.aspnetcore.authentication.openidconnect/3.0.0",
-      "hashPath": "microsoft.aspnetcore.authentication.openidconnect.3.0.0.nupkg.sha512"
+      "sha512": "sha512-O1cAQYUTU8EfRqwc5/rfTns4E4hKlFlg59fuKRrST+PzsxI6H07KqRN/JjdYhAuVYxF8jPnIGbj+zuc5paOWUw==",
+      "path": "microsoft.aspnetcore.authentication.openidconnect/3.1.0",
+      "hashPath": "microsoft.aspnetcore.authentication.openidconnect.3.1.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Cryptography.Internal/3.1.0": {
       "type": "package",
@@ -4800,12 +4800,12 @@
       "path": "system.text.encoding.extensions/4.3.0",
       "hashPath": "system.text.encoding.extensions.4.3.0.nupkg.sha512"
     },
-    "System.Text.Encodings.Web/4.5.0": {
+    "System.Text.Encodings.Web/4.6.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Xg4G4Indi4dqP1iuAiMSwpiWS54ZghzR644OtsRCm/m/lBMG8dUBhLVN7hLm8NNrNTR+iGbshCPTwrvxZPlm4g==",
-      "path": "system.text.encodings.web/4.5.0",
-      "hashPath": "system.text.encodings.web.4.5.0.nupkg.sha512"
+      "sha512": "sha512-BXgFO8Yi7ao7hVA/nklD0Hre1Bbce048ZqryGZVFifGNPuh+2jqF1i/jLJLMfFGZIzUOw+nCIeH24SQhghDSPw==",
+      "path": "system.text.encodings.web/4.6.0",
+      "hashPath": "system.text.encodings.web.4.6.0.nupkg.sha512"
     },
     "System.Text.RegularExpressions/4.3.0": {
       "type": "package",
