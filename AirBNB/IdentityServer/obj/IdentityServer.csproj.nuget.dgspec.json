@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Verhaegh\\source\\repos\\AirBNB\\IdentityServer\\IdentityServer.csproj": {}
+    "D:\\GitHub\\Onderzoeksverslag\\AirBNB\\IdentityServer\\IdentityServer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Verhaegh\\source\\repos\\AirBNB\\IdentityServer\\IdentityServer.csproj": {
+    "D:\\GitHub\\Onderzoeksverslag\\AirBNB\\IdentityServer\\IdentityServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Verhaegh\\source\\repos\\AirBNB\\IdentityServer\\IdentityServer.csproj",
+        "projectUniqueName": "D:\\GitHub\\Onderzoeksverslag\\AirBNB\\IdentityServer\\IdentityServer.csproj",
         "projectName": "IdentityServer",
-        "projectPath": "C:\\Users\\Verhaegh\\source\\repos\\AirBNB\\IdentityServer\\IdentityServer.csproj",
+        "projectPath": "D:\\GitHub\\Onderzoeksverslag\\AirBNB\\IdentityServer\\IdentityServer.csproj",
         "packagesPath": "C:\\Users\\Verhaegh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Verhaegh\\source\\repos\\AirBNB\\IdentityServer\\obj\\",
+        "outputPath": "D:\\GitHub\\Onderzoeksverslag\\AirBNB\\IdentityServer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -27,7 +27,8 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://www.myget.org/F/miniprofiler/api/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
@@ -112,7 +113,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100-preview.2.20176.6\\RuntimeIdentifierGraph.json"
         }
       }
     }
